@@ -16,7 +16,7 @@ jobs:
           command: |
             apk add --update ansible
       - run:
-          name: run the ansible playbook
+          name: Run the ansible playbook
           command: |
             ansible-playbook -i inventory.txt playbook.yml
 
