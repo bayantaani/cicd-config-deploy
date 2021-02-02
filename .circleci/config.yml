@@ -17,7 +17,8 @@ jobs:
             apk add --update ansible
       - run:
           name: Run the ansible playbook
-          environment: ANSIBLE_HOST_KEY_CHECKING: False
+          environment:
+            ANSIBLE_HOST_KEY_CHECKING: False
           command: |
             ansible-playbook -i inventory.txt playbook.yml
 
