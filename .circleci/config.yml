@@ -16,9 +16,10 @@ jobs:
           command: |
             apk add --update ansible
       - run:
+          command: |
+            export ANSIBLE_HOST_KEY_CHECKING=False
+      - run:
           name: Run the ansible playbook
-          environment:
-            ANSIBLE_HOST_KEY_CHECKING: False
           command: |
             ansible-playbook -i inventory.txt playbook.yml
 
